@@ -2,14 +2,12 @@ package com.example.drinkjournal
 
 import android.media.Rating
 
-abstract class DrinkData() {
-    constructor(
-        drinkName: String,
-        drinkMaker: String,
-        drinkType: String,
-        drinkOrigin: String,
-        drinkAlcoholPercentage: Short,
-        drinkRating: Rating,
-        drinkDescription: String
-    ) : this()
-}
+data class DrinkData(
+    var drinkName: String,
+    var drinkMaker: String,
+    var drinkType: String,
+    var drinkOrigin: String,
+    var drinkAlcoholPercentage: Short,
+    var drinkRating: Rating,
+    var drinkDescription: String
+)
