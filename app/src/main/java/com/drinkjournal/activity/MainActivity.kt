@@ -4,7 +4,7 @@ import android.media.Rating
 import android.media.Rating.RATING_5_STARS
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.drinkjournal.drinkjournal.BeerData
+import com.drinkjournal.dataClasses.BeerData
 import com.example.drinkjournal.R
 
 class MainActivity : AppCompatActivity() {
