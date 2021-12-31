@@ -1,4 +1,4 @@
-package com.example.drinkjournal
+package com.drinkjournal.drinkjournal
 
 import android.media.Rating
 

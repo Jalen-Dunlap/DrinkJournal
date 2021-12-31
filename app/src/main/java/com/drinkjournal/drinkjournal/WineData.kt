@@ -1,18 +1,16 @@
-package com.example.drinkjournal
+package com.drinkjournal.drinkjournal
 
 import android.media.Rating
 
-class MixedData (
+class WineData(
     name: String,
-    mixedType: String,
-    mixedMixer: String,
+    wineType: String,
     maker: String,
     origin: String,
     alcoholPercent: Short,
     rating: Rating,
     description: String
 ) {
-    var mixedStyle = mixedType
-    var mixedMixer = mixedMixer
+    var wineStyle = wineType
     var drinkData = DrinkData(name,maker,"Wine",origin,alcoholPercent,rating,description)
 }
