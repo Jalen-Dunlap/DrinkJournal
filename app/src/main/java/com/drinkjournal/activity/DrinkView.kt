@@ -10,4 +10,8 @@ class DrinkView : AppCompatActivity(), IControls {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_view)
     }
+
+    fun editDrink(){
+        // TODO: 12/31/2021
+    }
 }
