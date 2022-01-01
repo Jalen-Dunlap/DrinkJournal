@@ -16,6 +16,6 @@ class NewDrinkActivity : AppCompatActivity(), IControls {
     }
     
     fun discardDrink(){
-        // TODO: 12/31/2021  
+        // TODO: 12/31/2021
     }
 }
