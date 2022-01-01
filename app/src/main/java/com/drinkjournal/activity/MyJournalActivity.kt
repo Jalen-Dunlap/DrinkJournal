@@ -10,4 +10,12 @@ class MyJournalActivity : AppCompatActivity(), IControls {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_journal)
     }
+
+    fun viewDrink(){
+        // TODO: 12/31/2021 show the drink selected
+    }
+
+    fun displayDrinks(){
+        // TODO: 12/31/2021 Show the drinks in the journal on the page
+    }
 }
