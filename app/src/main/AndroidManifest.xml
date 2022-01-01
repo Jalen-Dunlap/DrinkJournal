@@ -10,6 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrinkJournal">
         <activity
+            android:name="com.drinkjournal.activity.MyJournalActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.drinkjournal.activity.DrinkView"
+            android:exported="false" />
+        <activity
+            android:name="com.drinkjournal.activity.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name="com.drinkjournal.activity.NewDrinkActivity"
+            android:exported="false" />
+        <activity
             android:name="com.drinkjournal.activity.MainActivity"
             android:exported="true">
             <intent-filter>
