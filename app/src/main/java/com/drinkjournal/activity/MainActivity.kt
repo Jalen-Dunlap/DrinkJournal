@@ -1,9 +1,12 @@
 package com.drinkjournal.activity
 
+import android.content.Intent
 import android.media.Rating
 import android.media.Rating.RATING_5_STARS
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import com.drinkjournal.dataClasses.BeerData
 import com.example.drinkjournal.R
 
@@ -11,6 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        toNewDrink()
+
+        toMyJournal()
+
+        toSettings()
     }
 
     fun testBeer(){
@@ -21,14 +30,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun toNewDrink(){
-        // TODO: 12/31/2021
+        val newDrink = findViewById<Button>(R.id.newDrinkButton)
+        newDrink.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, NewDrinkActivity::class.java))
+        })
     }
 
     fun toMyJournal(){
-        // TODO: 12/31/2021
+        val myJournal = findViewById<Button>(R.id.myJournalButton)
+        myJournal.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this,MyJournalActivity::class.java))
+        })
     }
 
     fun toSettings(){
-        // TODO: 12/31/2021
+        val settingsButton = findViewById<Button>(R.id.settingsButton)
+        settingsButton.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        })
     }
 }
