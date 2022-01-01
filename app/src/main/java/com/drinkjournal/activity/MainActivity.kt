@@ -20,4 +20,15 @@ class MainActivity : AppCompatActivity() {
         println(beerData.beerStyle)
     }
 
+    fun toNewDrink(){
+        // TODO: 12/31/2021
+    }
+
+    fun toMyJournal(){
+        // TODO: 12/31/2021
+    }
+
+    fun toSettings(){
+        // TODO: 12/31/2021
+    }
 }
