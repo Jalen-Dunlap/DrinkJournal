@@ -3,9 +3,10 @@ package com.drinkjournal.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import com.drinkjournal.`interface`.IControls
 import com.example.drinkjournal.R
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity(), IControls {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
