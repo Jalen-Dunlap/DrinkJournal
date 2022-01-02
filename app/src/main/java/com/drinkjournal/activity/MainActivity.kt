@@ -29,21 +29,21 @@ class MainActivity : AppCompatActivity() {
         println(beerData.beerStyle)
     }
 
-    fun toNewDrink(){
+    private fun toNewDrink(){
         val newDrink = findViewById<Button>(R.id.newDrinkButton)
         newDrink.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, NewDrinkActivity::class.java))
         })
     }
 
-    fun toMyJournal(){
+    private fun toMyJournal(){
         val myJournal = findViewById<Button>(R.id.myJournalButton)
         myJournal.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this,MyJournalActivity::class.java))
         })
     }
 
-    fun toSettings(){
+    private fun toSettings(){
         val settingsButton = findViewById<Button>(R.id.settingsButton)
         settingsButton.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
