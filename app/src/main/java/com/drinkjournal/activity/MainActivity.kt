@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import com.drinkjournal.dataClasses.BeerData
 import com.example.drinkjournal.R
 
@@ -46,7 +47,8 @@ class MainActivity : AppCompatActivity() {
     private fun toSettings(){
         val settingsButton = findViewById<Button>(R.id.settingsButton)
         settingsButton.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+            Toast.makeText(applicationContext,"Not currently available", Toast.LENGTH_SHORT).show()
+            //startActivity(Intent(this, SettingsActivity::class.java))
         })
     }
 }
