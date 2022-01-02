@@ -1,4 +1,4 @@
-package com.drinkjournal.activity
+package com.example.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

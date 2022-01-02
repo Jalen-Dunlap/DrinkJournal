@@ -1,4 +1,4 @@
-package com.drinkjournal.activity
+package com.example.activity
 
 import android.content.Intent
 import android.media.Rating
@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import com.drinkjournal.dataClasses.BeerData
+import com.example.dataClasses.BeerData
 import com.example.drinkjournal.R
 
 class MainActivity : AppCompatActivity() {

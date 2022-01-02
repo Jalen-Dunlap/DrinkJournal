@@ -10,20 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrinkJournal">
         <activity
-            android:name="com.drinkjournal.activity.MyJournalActivity"
+            android:name="com.example.activity.MyJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.drinkjournal.activity.DrinkView"
+            android:name="com.example.activity.DrinkView"
             android:exported="false" />
         <activity
-            android:name="com.drinkjournal.activity.SettingsActivity"
+            android:name="com.example.activity.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name="com.drinkjournal.activity.NewDrinkActivity"
+            android:name="com.example.activity.NewDrinkActivity"
             android:exported="false" />
         <activity
-            android:name="com.drinkjournal.activity.MainActivity"
+            android:name="com.example.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
