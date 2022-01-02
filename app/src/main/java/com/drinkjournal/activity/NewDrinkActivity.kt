@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import com.drinkjournal.`interface`.IControls
 import com.example.drinkjournal.R
 
-class NewDrinkActivity : AppCompatActivity(), IControls {
+class NewDrinkActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_drink)
