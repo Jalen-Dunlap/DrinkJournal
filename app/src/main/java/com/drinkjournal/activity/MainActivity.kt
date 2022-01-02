@@ -1,4 +1,4 @@
-package com.example.activity
+package com.drinkjournal.activity
 
 import android.content.Intent
 import android.media.Rating
@@ -8,8 +8,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import com.example.dataClasses.BeerData
-import com.example.drinkjournal.R
+import com.drinkjournal.dataClasses.BeerData
+import com.drinkjournal.drinkjournal.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,8 +1,8 @@
-package com.example.activity
+package com.drinkjournal.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.drinkjournal.R
+import com.drinkjournal.drinkjournal.R
 
 class DrinkView : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
