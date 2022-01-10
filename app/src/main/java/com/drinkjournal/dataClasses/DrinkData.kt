@@ -2,12 +2,13 @@ package com.drinkjournal.dataClasses
 
 import android.media.Rating
 
-data class DrinkData(
+class DrinkData(
     var drinkName: String,
-    var drinkMaker: String,
     var drinkType: String,
+    var drinkSpecifics : String,
+    var drinkAlcoholPercentage: Int,
+    var drinkMaker: String,
     var drinkOrigin: String,
-    var drinkAlcoholPercentage: Short,
-    var drinkRating: Rating,
-    var drinkDescription: String
+    var drinkDescription: String,
+    var drinkRating: Float
 )

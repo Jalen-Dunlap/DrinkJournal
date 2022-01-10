@@ -4,25 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
     tools:context="com.drinkjournal.activity.NewDrinkActivity">
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Drink"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
+        android:stretchColumns="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/drinkName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Name"
+                        android:minHeight="48dp"
+                        android:inputType="text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+
+                    <EditText
+                        android:id="@+id/drinkType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Type"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkName" />
+
+                    <EditText
+                        android:id="@+id/drinkSpecs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Specifics"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkType" />
+
+                    <EditText
+                        android:id="@+id/alcoholPercent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Alcohol Percentage"
+                        android:inputType="number"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkSpecs" />
+
+                    <EditText
+                        android:id="@+id/drinkMaker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Maker"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/alcoholPercent" />
+
+                    <EditText
+                        android:id="@+id/drinkOrigin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Origin"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkMaker" />
+
+                    <EditText
+                        android:id="@+id/drinkDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Drink Description"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkOrigin" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Rating Bar"
+                        android:numStars="5"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/drinkDescription" />
+
+                    <Button
+                        android:id="@+id/addButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Add Drink"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+            </ScrollView>
+        </TableRow>
+
+    </TableLayout>
+
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
