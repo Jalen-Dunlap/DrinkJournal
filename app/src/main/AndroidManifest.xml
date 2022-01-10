@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.drinkjournal">
+    package="com.drinkjournal.drinkjournal">
 
     <application
         android:allowBackup="true"
@@ -10,20 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrinkJournal">
         <activity
-            android:name="com.example.activity.MyJournalActivity"
+            android:name="com.drinkjournal.activity.MyJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.activity.DrinkView"
+            android:name="com.drinkjournal.activity.DrinkView"
             android:exported="false" />
         <activity
-            android:name="com.example.activity.SettingsActivity"
+            android:name="com.drinkjournal.activity.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name="com.example.activity.NewDrinkActivity"
+            android:name="com.drinkjournal.activity.NewDrinkActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.activity.MainActivity"
+            android:name="com.drinkjournal.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
