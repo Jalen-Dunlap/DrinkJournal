@@ -25,7 +25,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createDrinkJournal = (
-                "CREATE TABLE " + TABLE_NAME +
+                "CREATE TABLE " + TABLE_NAME + "(" +
                 col0 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 col1 + " TEXT," +
                 col2 + " TEXT," +
@@ -34,7 +34,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
                 col5 + " TEXT," +
                 col6 + " TEXT," +
                 col7 + " TEXT," +
-                col8 + " REAL," + ")"
+                col8 + " REAL" + ")"
                 )
         db?.execSQL(createDrinkJournal)
     }

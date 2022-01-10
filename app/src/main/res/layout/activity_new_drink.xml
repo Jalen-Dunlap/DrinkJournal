@@ -46,77 +46,84 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Name"
                         android:minHeight="48dp"
+                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Type"
+                        android:inputType="text"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/drinkName" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkSpecs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Specifics"
+                        android:inputType="text"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/drinkType" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/alcoholPercent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Alcohol Percentage"
+                        android:inputType="number"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/drinkSpecs" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkMaker"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Maker"
+                        android:inputType="text"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/alcoholPercent" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkOrigin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Origin"
+                        android:inputType="text"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/drinkMaker" />
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/drinkDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Drink Description"
+                        android:inputType="text"
                         android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
