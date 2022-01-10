@@ -51,7 +51,6 @@ class NewDrinkActivity : AppCompatActivity(){
         }
     }
 
-
     private fun backButton(){
         val backButton = findViewById<Button>(R.id.backButton)
         backButton.setOnClickListener{
