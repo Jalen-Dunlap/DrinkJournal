@@ -8,11 +8,10 @@ import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
 import com.drinkjournal.dataClasses.DrinkData
-import com.drinkjournal.db.DBHelper
+import com.drinkjournal.managers.DBHelper
 import com.drinkjournal.drinkjournal.R
 import java.lang.Exception
 import java.lang.NumberFormatException
-import kotlin.math.roundToInt
 
 class NewDrinkActivity : AppCompatActivity(){
 
