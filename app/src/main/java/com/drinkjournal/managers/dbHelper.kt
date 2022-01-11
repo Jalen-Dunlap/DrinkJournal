@@ -1,14 +1,18 @@
-package com.drinkjournal.db
+package com.drinkjournal.managers
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import com.drinkjournal.dataClasses.DrinkData
 
 class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATABASE_VERSION) {
 
     companion object{
+
+
         private const val TABLE_NAME = "MyJournal"
         private const val DATABASE_VERSION = 1
     }
@@ -59,5 +63,48 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
         val success = db.insert(TABLE_NAME,null,contentValues)
         db.close()
         return success
+    }
+
+    fun viewDrinks(): List<DrinkData> {
+        val drinkList : ArrayList<DrinkData> = ArrayList<DrinkData>()
+        val selectQuery = "SELECT * FROM $TABLE_NAME"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        }catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+
+        var name: String
+        var type: String
+        var specs: String
+        var alcoholPercent: Int
+        var maker: String
+        var origin: String
+        var description: String
+        var rating: Float
+
+        if (cursor.moveToFirst()){
+            do{
+                name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
+                type = cursor.getString(cursor.getColumnIndexOrThrow("drinkType"))
+                specs =  cursor.getString(cursor.getColumnIndexOrThrow("drinkSpecifics"))
+                alcoholPercent = cursor.getInt(cursor.getColumnIndexOrThrow("alcoholPercent"))
+                maker = cursor.getString(cursor.getColumnIndexOrThrow("drinkMaker"))
+                origin = cursor.getString(cursor.getColumnIndexOrThrow("drinkOrigin"))
+                description = cursor.getString(cursor.getColumnIndexOrThrow("description"))
+                rating = cursor.getFloat(cursor.getColumnIndexOrThrow("rating"))
+
+                val drink = DrinkData(name, type,specs,alcoholPercent,maker,origin,description,rating)
+                drinkList.add(drink)
+
+            } while (cursor.moveToNext())
+
+            cursor.close()
+        }
+        return drinkList
     }
 }
