@@ -16,7 +16,7 @@ class DrinkView : AppCompatActivity(){
     private lateinit var maker: String
     private lateinit var origin: String
     private lateinit var description: String
-    private lateinit var ratingString: String
+    private var rating = 0.0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,11 @@ class DrinkView : AppCompatActivity(){
             maker = intent.getStringExtra("maker").toString()
             origin = intent.getStringExtra("origin").toString()
             description = intent.getStringExtra("description").toString()
-            ratingString = intent.getStringExtra("rating").toString()
+            rating = intent.getFloatExtra("rating",3.5f)
+        }
+
+        if (rating > 5){
+            rating = 5.0f
         }
 
         displayDrink()
@@ -59,7 +63,8 @@ class DrinkView : AppCompatActivity(){
         etMaker.setText(maker)
         etOrigin.setText(origin)
         etDescription.setText(description)
-        etRating.rating = ratingString.toFloat()
+        etRating.numStars = 5
+        etRating.rating = rating
     }
 
     private fun backButton(){
@@ -70,11 +75,19 @@ class DrinkView : AppCompatActivity(){
     }
 
     private fun deleteDrink() {
-        TODO("Not yet implemented")
+        //TODO
+        /*
+        * take id from db
+        * delete from db table
+        */
     }
 
     private fun updateDrink(){
-        // TODO: 12/31/2021
+        //TODO
+        /*
+        * Take id in db
+        * update data in db
+        */
     }
 
     private fun toastMessage(message :String){

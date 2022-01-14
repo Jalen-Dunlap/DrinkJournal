@@ -41,8 +41,7 @@ class MyJournalActivity : AppCompatActivity(){
         val myListAdapter = MyListAdapter(this,drinksArrayName,drinksArrayType)
         myJournalListView.adapter = myListAdapter
 
-        myJournalListView.setOnItemClickListener { parent, view, position, id ->
-            //val element = myJournalListView.getItemAtPosition(position)
+        myJournalListView.setOnItemClickListener { _, _, position, _ ->
             toastMessage(drinks[position].drinkName)
             val intent = Intent(this,DrinkView::class.java)
             val drink = drinks[position]
@@ -53,10 +52,8 @@ class MyJournalActivity : AppCompatActivity(){
             intent.putExtra("maker",drink.drinkMaker)
             intent.putExtra("origin",drink.drinkOrigin)
             intent.putExtra("description",drink.drinkDescription)
-            intent.putExtra("rating",drink.drinkRating.toString())
-            Log.d("INTENT","----------------Intent Made and extras added")
+            intent.putExtra("rating",drink.drinkRating)
             startActivity(intent)
-            Log.d("INTENT","----------------Start Activity")
         }
     }
 
