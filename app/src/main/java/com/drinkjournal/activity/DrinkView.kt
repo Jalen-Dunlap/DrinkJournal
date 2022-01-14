@@ -9,14 +9,15 @@ import android.widget.Toast
 import com.drinkjournal.drinkjournal.R
 
 class DrinkView : AppCompatActivity(){
-    lateinit var name: String
-    lateinit var type: String
-    lateinit var specs : String
-    lateinit var alcoholPercentageString: String
-    lateinit var maker: String
-    lateinit var origin: String
-    lateinit var description: String
-    lateinit var ratingString: String
+    private lateinit var name: String
+    private lateinit var type: String
+    private lateinit var specs : String
+    private lateinit var alcoholPercentageString: String
+    private lateinit var maker: String
+    private lateinit var origin: String
+    private lateinit var description: String
+    private lateinit var ratingString: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_view)
