@@ -119,4 +119,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
         db.close()
         return success
     }
+
+    fun updateDrink(drink:DrinkData): Int{
+        val db = this.writableDatabase
+        val id = drink.drinkId
+        val contentValues = ContentValues()
+
+        contentValues.put(col1,drink.drinkName)
+        contentValues.put(col2,drink.drinkType)
+        contentValues.put(col3,drink.drinkSpecifics)
+        contentValues.put(col4,drink.drinkAlcoholPercentage)
+        contentValues.put(col5,drink.drinkMaker)
+        contentValues.put(col6,drink.drinkOrigin)
+        contentValues.put(col7,drink.drinkDescription)
+        contentValues.put(col8,drink.drinkRating)
+
+        val success = db.update(TABLE_NAME,contentValues,"$col0=$id",null)
+        db.close()
+
+        return success
+    }
 }

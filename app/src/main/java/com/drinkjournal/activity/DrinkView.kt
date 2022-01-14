@@ -1,6 +1,5 @@
 package com.drinkjournal.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -49,20 +48,20 @@ class DrinkView : AppCompatActivity(){
 
         backButton()
 
-        //updateDrink()
+        updateDrink(drink)
 
         deleteDrink(drink)
     }
 
     private fun displayDrink() {
-        val etName = findViewById<EditText>(R.id.drinkNameDrinkView)
-        val etType = findViewById<EditText>(R.id.drinkTypeDrinkView)
-        val etSpecs = findViewById<EditText>(R.id.drinkSpecsDrinkView)
-        val etAlcPercent = findViewById<EditText>(R.id.alcoholPercentDrinkView)
-        val etMaker = findViewById<EditText>(R.id.drinkMakerDrinkView)
-        val etOrigin = findViewById<EditText>(R.id.drinkOriginDrinkView)
-        val etDescription = findViewById<EditText>(R.id.drinkDescriptionDrinkView)
-        val etRating = findViewById<RatingBar>(R.id.ratingBarDrinkView)
+        val etName: EditText = findViewById<EditText>(R.id.drinkNameDrinkView)
+        val etType: EditText = findViewById<EditText>(R.id.drinkTypeDrinkView)
+        val etSpecs: EditText = findViewById<EditText>(R.id.drinkSpecsDrinkView)
+        val etAlcPercent: EditText = findViewById<EditText>(R.id.alcoholPercentDrinkView)
+        val etMaker: EditText = findViewById<EditText>(R.id.drinkMakerDrinkView)
+        val etOrigin: EditText = findViewById<EditText>(R.id.drinkOriginDrinkView)
+        val etDescription: EditText = findViewById<EditText>(R.id.drinkDescriptionDrinkView)
+        val etRating: RatingBar = findViewById<RatingBar>(R.id.ratingBarDrinkView)
 
         etName.setText(name)
         etType.setText(type)
@@ -90,19 +89,39 @@ class DrinkView : AppCompatActivity(){
             if (status>-1){
                 toastMessage("Deleted drink ${drinkToDelete.drinkName}")
                 finish()
-                Log.d("FLOW","Leaving Drink View")
             }else{
                 toastMessage("Unable to delete")
             }
         }
     }
 
-    private fun updateDrink(){
-        //TODO
-        /*
-        * Take id in db
-        * update data in db
-        */
+    private fun updateDrink(drinkToUpdate: DrinkData){
+        val etName: EditText = findViewById<EditText>(R.id.drinkNameDrinkView)
+        val etType: EditText = findViewById<EditText>(R.id.drinkTypeDrinkView)
+        val etSpecs: EditText = findViewById<EditText>(R.id.drinkSpecsDrinkView)
+        val etAlcPercent: EditText = findViewById<EditText>(R.id.alcoholPercentDrinkView)
+        val etMaker: EditText = findViewById<EditText>(R.id.drinkMakerDrinkView)
+        val etOrigin: EditText = findViewById<EditText>(R.id.drinkOriginDrinkView)
+        val etDescription: EditText = findViewById<EditText>(R.id.drinkDescriptionDrinkView)
+        val etRating: RatingBar = findViewById<RatingBar>(R.id.ratingBarDrinkView)
+
+        val myJournalDB = DBHelper(this)
+        val updateButton = findViewById<Button>(R.id.updateDrink)
+        updateButton.setOnClickListener {
+            drinkToUpdate.drinkName = etName.text.toString()
+            drinkToUpdate.drinkType = etType.text.toString()
+            drinkToUpdate.drinkSpecifics = etSpecs.text.toString()
+            drinkToUpdate.drinkAlcoholPercentage = etAlcPercent.text.toString().toInt()
+            drinkToUpdate.drinkMaker = etMaker.text.toString()
+            drinkToUpdate.drinkOrigin = etOrigin.text.toString()
+            drinkToUpdate.drinkDescription = etDescription.text.toString()
+            drinkToUpdate.drinkRating = etRating.rating
+
+            val status = myJournalDB.updateDrink(drinkToUpdate)
+            if (status >-1) {
+                toastMessage("Updated drink ${drinkToUpdate.drinkName}")
+            }
+        }
     }
 
     private fun toastMessage(message :String){
