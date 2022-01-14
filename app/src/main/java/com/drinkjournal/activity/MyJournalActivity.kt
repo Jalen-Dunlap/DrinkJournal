@@ -19,11 +19,12 @@ class MyJournalActivity : AppCompatActivity(){
 
         backButton()
         displayDrinks()
-        viewDrink()
     }
 
-    private fun viewDrink(){
+    override fun onResume() {
+        super.onResume()
     }
+
 
     private fun displayDrinks(){
         val myJournalListView = findViewById<ListView>(R.id.myJournalList)
@@ -42,17 +43,22 @@ class MyJournalActivity : AppCompatActivity(){
         myJournalListView.adapter = myListAdapter
 
         myJournalListView.setOnItemClickListener { _, _, position, _ ->
-            toastMessage(drinks[position].drinkName)
+            Log.d("Delete","----------Clicked item")
             val intent = Intent(this,DrinkView::class.java)
             val drink = drinks[position]
+            Log.d("Delete","----------Created intent and drink")
+
+            intent.putExtra("id",drink.drinkId)
             intent.putExtra("name",drink.drinkName)
             intent.putExtra("type",drink.drinkType)
             intent.putExtra("specs",drink.drinkSpecifics)
-            intent.putExtra("alcPercent",drink.drinkAlcoholPercentage.toString())
+            intent.putExtra("alcPercent",drink.drinkAlcoholPercentage)
             intent.putExtra("maker",drink.drinkMaker)
             intent.putExtra("origin",drink.drinkOrigin)
             intent.putExtra("description",drink.drinkDescription)
             intent.putExtra("rating",drink.drinkRating)
+            Log.d("Delete","----------added intent extras")
+
             startActivity(intent)
         }
     }

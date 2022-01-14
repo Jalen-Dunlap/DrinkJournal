@@ -9,4 +9,6 @@ class DrinkData(
     var drinkOrigin: String,
     var drinkDescription: String,
     var drinkRating: Float
-)
+){
+    var drinkId= -1
+}

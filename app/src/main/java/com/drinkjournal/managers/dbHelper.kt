@@ -11,8 +11,6 @@ import com.drinkjournal.dataClasses.DrinkData
 class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATABASE_VERSION) {
 
     companion object{
-
-
         private const val TABLE_NAME = "MyJournal"
         private const val DATABASE_VERSION = 1
     }
@@ -86,9 +84,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
         var origin: String
         var description: String
         var rating: Float
+        var id: Int
 
         if (cursor.moveToFirst()){
             do{
+                id = cursor.getInt(cursor.getColumnIndexOrThrow("ID"))
                 name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 type = cursor.getString(cursor.getColumnIndexOrThrow("drinkType"))
                 specs =  cursor.getString(cursor.getColumnIndexOrThrow("drinkSpecifics"))
@@ -99,6 +99,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
                 rating = cursor.getFloat(cursor.getColumnIndexOrThrow("rating"))
 
                 val drink = DrinkData(name, type,specs,alcoholPercent,maker,origin,description,rating)
+                drink.drinkId = id
+
                 drinkList.add(drink)
 
             } while (cursor.moveToNext())
@@ -106,5 +108,15 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
             cursor.close()
         }
         return drinkList
+    }
+
+    fun deleteDrink(drink:DrinkData):Int{
+        val db = this.writableDatabase
+        val id = drink.drinkId
+        val contentValues = ContentValues()
+        contentValues.put(col0,id)
+        val success = db.delete(TABLE_NAME, "$col0=$id",null)
+        db.close()
+        return success
     }
 }
