@@ -38,9 +38,6 @@ class DrinkView : AppCompatActivity(){
             rating = intent.getFloatExtra("rating",3.5f)
         }
 
-        if (rating > 5){
-            rating = 5.0f
-        }
         var drink = DrinkData(name,type,specs,alcoholPercentage,maker,origin,description,rating)
         drink.drinkId = id
 

@@ -113,10 +113,13 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,TABLE_NAME,null,DATA
     fun deleteDrink(drink:DrinkData):Int{
         val db = this.writableDatabase
         val id = drink.drinkId
+
         val contentValues = ContentValues()
         contentValues.put(col0,id)
+
         val success = db.delete(TABLE_NAME, "$col0=$id",null)
         db.close()
+
         return success
     }
 

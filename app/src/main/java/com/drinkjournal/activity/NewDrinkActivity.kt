@@ -23,7 +23,6 @@ class NewDrinkActivity : AppCompatActivity(){
         setContentView(R.layout.activity_new_drink)
 
         addDrinkButton()
-
         backButton()
     }
     
@@ -43,12 +42,10 @@ class NewDrinkActivity : AppCompatActivity(){
             try {
                 alcoholPercent = alcoholPercentString.toFloat().toInt()
             }catch (e: NumberFormatException){
-                Log.d("CATCH","Caught numberformat exception")
-                toastMessage("Alcohol Percentage needs to be fixed")
+                toastMessage("Alcohol Percentage is invalid")
             }catch (e: Exception){
             }
 
-            Log.d("MyActivity","DEBUG :::::::name:$name \n a%:$alcoholPercent \n rat:$rating")
             if (name != "" && type != "" && specs != "" && alcoholPercent >= 0
                 && maker != "" && origin != "" && description != "" && rating >= 0) {
                 newDrink =
