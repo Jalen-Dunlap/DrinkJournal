@@ -13,18 +13,25 @@ import com.drinkjournal.managers.DBHelper
 import com.drinkjournal.managers.MyListAdapter
 
 class MyJournalActivity : AppCompatActivity(){
+    //private val myJournalListView: ListView = findViewById<ListView>(R.id.myJournalList)
+    private lateinit var myListAdapter: MyListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_journal)
 
         backButton()
         displayDrinks()
+        refreshButton()
     }
 
-    override fun onResume() {
-        super.onResume()
+    private fun refreshButton() {
+        val refreshButton = findViewById<Button>(R.id.refreshButton)
+        refreshButton.setOnClickListener {
+            myListAdapter.notifyDataSetChanged()
+            displayDrinks()
+        }
     }
-
 
     private fun displayDrinks(){
         val myJournalListView = findViewById<ListView>(R.id.myJournalList)
@@ -39,7 +46,7 @@ class MyJournalActivity : AppCompatActivity(){
             drinksArrayType[index] = drink.drinkType
         }
 
-        val myListAdapter = MyListAdapter(this,drinksArrayName,drinksArrayType)
+        myListAdapter = MyListAdapter(this,drinksArrayName,drinksArrayType)
         myJournalListView.adapter = myListAdapter
 
         myJournalListView.setOnItemClickListener { _, _, position, _ ->
@@ -60,6 +67,7 @@ class MyJournalActivity : AppCompatActivity(){
             Log.d("Delete","----------added intent extras")
 
             startActivity(intent)
+            Log.d("FLOW","After Start of drink view")
         }
     }
 

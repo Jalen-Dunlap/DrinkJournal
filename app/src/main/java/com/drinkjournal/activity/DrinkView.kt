@@ -3,6 +3,7 @@ package com.drinkjournal.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
@@ -87,7 +88,9 @@ class DrinkView : AppCompatActivity(){
         deleteButton.setOnClickListener {
             val status = myJournalDB.deleteDrink(drinkToDelete)
             if (status>-1){
+                toastMessage("Deleted drink ${drinkToDelete.drinkName}")
                 finish()
+                Log.d("FLOW","Leaving Drink View")
             }else{
                 toastMessage("Unable to delete")
             }
