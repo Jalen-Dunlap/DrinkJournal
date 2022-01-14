@@ -1,7 +1,5 @@
 package com.drinkjournal.dataClasses
 
-import android.media.Rating
-
 class DrinkData(
     var drinkName: String,
     var drinkType: String,
