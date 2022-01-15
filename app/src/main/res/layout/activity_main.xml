@@ -11,40 +11,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
-        android:text="New Drink"
+        android:text="@string/new_drink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <Button
         android:id="@+id/myJournalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="My Journal"
+        android:text="@string/my_journal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newDrinkButton" />
+        app:layout_constraintTop_toBottomOf="@+id/newDrinkButton"  />
 
     <Button
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Settings"
+        android:text="@string/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myJournalButton" />
+        app:layout_constraintTop_toBottomOf="@+id/myJournalButton"
+        android:importantForAutofill="no"  />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/newDrinkButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"  />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

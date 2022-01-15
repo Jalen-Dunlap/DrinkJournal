@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DrinkJournal</string>
+    <string name="app_name">Drink Journal</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -32,4 +32,7 @@
     <string name="back">Back</string>
     <string name="refresh">Refresh</string>
     <string name="add_drink">Add Drink</string>
+    <string name="new_drink">New Drink</string>
+    <string name="my_journal">My Journal</string>
+    <string name="settings">Settings</string>
 </resources>
