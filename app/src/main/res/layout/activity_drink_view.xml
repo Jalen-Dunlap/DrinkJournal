@@ -15,7 +15,7 @@
         android:id="@+id/backButtonDrinkView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,31 +32,33 @@
             android:id="@+id/drinkNameDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Name"
+            android:hint="@string/name"
             android:inputType="text"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addButton" />
+            app:layout_constraintTop_toBottomOf="@+id/addButton"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/drinkTypeDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Type"
+            android:hint="@string/type"
             android:inputType="text"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkName" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkName"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/drinkSpecsDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Specifics"
+            android:hint="@string/specs"
             android:maxLines="5"
             android:scrollHorizontally="false"
             android:inputType="text"
@@ -64,50 +66,53 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkType" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkType"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/alcoholPercentDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Alcohol Percentage"
+            android:hint="@string/alcohol_percentage"
             android:inputType="number"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkSpecs" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkSpecs"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/drinkMakerDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Maker"
+            android:hint="@string/maker"
             android:inputType="text"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/alcoholPercent" />
+            app:layout_constraintTop_toBottomOf="@+id/alcoholPercent"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/drinkOriginDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Origin"
+            android:hint="@string/origin"
             android:inputType="text"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkMaker" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkMaker"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/drinkDescriptionDrinkView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Drink Description"
-            android:breakStrategy="balanced"
+            android:hint="@string/description"
             android:maxLines="5"
             android:scrollHorizontally="false"
             android:inputType="text"
@@ -115,20 +120,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkOrigin" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkOrigin"
+            android:importantForAutofill="no" />
 
         <RatingBar
             android:id="@+id/ratingBarDrinkView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="Rating Bar"
+            android:contentDescription="@string/rating_bar"
             android:numStars="5"
             android:rating="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drinkDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/drinkDescription"
+            android:importantForAutofill="no" />
     </LinearLayout>
 
     <Button
@@ -136,17 +143,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:text="Update"
+        android:text="@string/update"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/deleteDrink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
-        android:text="Delete"
+        android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

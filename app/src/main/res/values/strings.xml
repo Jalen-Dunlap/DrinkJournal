@@ -19,4 +19,17 @@
 
     <!-- List Viewer -->
     <string name="listViewName">Name: %s</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="rating_bar">Rating Bar</string>
+    <string name="description">Drink Description</string>
+    <string name="origin">Drink Origin</string>
+    <string name="maker">Drink Maker</string>
+    <string name="alcohol_percentage">Alcohol Percentage</string>
+    <string name="specs">Drink Specifics</string>
+    <string name="type">Drink Type</string>
+    <string name="name">Drink Name</string>
+    <string name="back">Back</string>
+    <string name="refresh">Refresh</string>
+    <string name="add_drink">Add Drink</string>
 </resources>
