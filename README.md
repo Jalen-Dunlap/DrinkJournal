@@ -1,1 +1,1 @@
-# DrinkJournal an app for tracking drinks that you drink
+# DrinkJournal an app for tracking recipes and ratings for different beverages you drink
